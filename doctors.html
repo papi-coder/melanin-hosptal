@@ -1,176 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Melanin Hospital - Doctors</title>
-  <style>/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #c2c9cf;
-  padding: 15px 40px;
-}
+    body {
+      background-color: #f4f6f8;
+      color: #2c3e50;
+    }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-}
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c3e50;
+      padding: 15px 30px;
+      position: relative;
+    }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-}
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
 
-.nav-links li {
-  margin-left: 25px;
-}
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
 
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  transition: color 0.3s;
-}
+    .nav-links li {
+      margin: 0;
+    }
 
-.nav-links a:hover {
-  color: #f39c12;
-}
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
 
-/* Hero */
-.hero {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url() center/cover no-repeat;
-  color: white;
-  text-align: center;
-}
+    .nav-links a:hover {
+      color: #f39c12;
+    }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
+    /* Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-.hero p {
-  font-size: 20px;
-}
+    .menu-toggle span {
+      background: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
 
-.flex-item {
-  background:url(/imgs/family\ 2.jpg) ;
-  padding: 25px;
-  flex: 1;
-  min-width: 220px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-}
+    /* Content Section */
+    .content {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('/imgs/family.jpg') center/cover no-repeat;
+      color: #ecf0f1;
+    }
 
-.flex-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
+    .content h2 {
+      background: #2c3e50;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 3px solid #f1c40f;
+      margin-bottom: 20px;
+    }
 
-.flex-item img {
-  width: 80px;
-  margin-bottom: 15px;
-}
+    .content p {
+      margin: 10px auto;
+      max-width: 600px;
+      background: #2c3e50;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #2ecc71;
+    }
 
-.flex-item h2 {
-  color: #cad3e0;
-  margin-bottom: 10px;
-  pointer: cursor
-}
+    .content ul {
+      list-style: none;
+      max-width: 400px;
+      margin: 20px auto;
+      background: #2c3e50;
+      border: 2px solid #3498db;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: left;
+    }
 
-/* Content Section */
-.content {
-  padding: 40px;
-  text-align: center;
-  margin-bottom: 20px;
- background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('/imgs/family.jpg') center/cover no-repeat;
+    .content ul li {
+      margin: 8px 0;
+      color: #ecf0f1;
+    }
 
+    /* Appointment Section */
+    .appointment-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
 
+    .form-container {
+      background: white;
+      max-width: 500px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px 25px;
+    }
 
+    .form-container h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
 
-}
+    .form-container p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
 
-.content h2 {
-  color: #d8e0e7;
- 
-}
-div h2{
-cursor: pointer;
-background:#2c3e50 ;
-width: 50%;
-height: 50%;
-align-items: center;
-justify-content: center;
-margin-left:160px ;
-border-radius: 10px;
-border: 3px solid rgb(235, 232, 83);
-}
-.content p {
-  color: #d8e0e7;
-}
+    .form-group {
+      text-align: left;
+      margin-bottom: 15px;
+    }
 
-p {
-  cursor: pointer;
-background: #2c3e50;
-width: 50%;
-height: 50%;
-align-items: center;
-justify-content: center;
-margin-left:160px ;
-border-radius: 10px;
-border: 3px solid rgb(83, 235, 108);
-}
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
 
-.content ul {
-  color: #d8e0e7;
-}
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+    }
 
-ul{
-   cursor: pointer;
-background:#2c3e50 ;
-width: 50%;
-height: 50%;
-align-items: center;
-justify-content: center;
-margin-left:160px ;
-border-radius: 10px;
-border: 3px solid rgb(64, 186, 223);
-}
+    input:focus,
+    select:focus {
+      border-color: #3498db;
+    }
 
- 
-form {
-   padding: 40px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #d8e0e7;
- 
-}
-</style>
-  <link rel="stylesheet" href="style.css">
+    .submit-btn {
+      background: #2c3e50;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #1a242f;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Confirmation Box */
+    #confirmation-box {
+      background: #ecf0f1;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      color: #2c3e50;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: #2c3e50;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .content h2 {
+        width: 80%;
+        font-size: 1.3rem;
+      }
+
+      .content ul {
+        width: 80%;
+      }
+
+      .form-container {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 18px;
+      }
+
+      .content h2 {
+        font-size: 1.1rem;
+      }
+
+      .form-container h2 {
+        font-size: 1.2rem;
+      }
+
+      input,
+      select {
+        font-size: 0.9rem;
+      }
+
+      .submit-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Melanin Hospital</div>
-    <ul class="nav-links">
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="doctors.html">Doctors</a></li>
@@ -178,11 +271,9 @@ form {
     </ul>
   </nav>
 
+  <!-- Doctors Section -->
   <section class="content">
-    <div>
- <h2 class="docs">Our Doctors</h2>
-    </div>
-   
+    <h2>Our Doctors</h2>
     <p>Meet our team of dedicated healthcare professionals.</p>
     <ul>
       <li>Dr. John Doe - Cardiologist</li>
@@ -190,110 +281,88 @@ form {
       <li>Dr. Ahmed Musa - Surgeon</li>
       <li>Dr. Jane Smith - Dermatologist</li>
     </ul>
+  </section>
 
-   <header>
-    
-    
-
+  <!-- Appointment Form -->
   <section class="appointment-section">
-    <div class="form-container">
-      <!-- Booking Form -->
-      <div id="form-box">
-        <h2>Book an Appointment</h2>
-        <p>Please fill out the form below to schedule your visit.</p>
-        
-        <form id="appointment-form" class="appointment-form">
-          <div class="form-group">
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" placeholder="Enter your full name" required>
-          </div>
-          <br>
-          <br>
+    <div class="form-container" id="form-box">
+      <h2>Book an Appointment</h2>
+      <p>Please fill out the form below to schedule your visit.</p>
 
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-          </div>
-          <br>
-          <br>
+      <form id="appointment-form">
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" placeholder="Enter your full name" required />
+        </div>
 
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" placeholder="Enter your phone number" required>
-          </div>
-          <br>
-          <br>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
 
-          <div class="form-group">
-            <label for="doctor">Select Doctor</label>
-            <select id="doctor" required>
-              <option value="">-- Choose Doctor --</option>
-              <option value="Dr. John Smith (Cardiologist)">Dr. John Smith - Cardiologist</option>
-              <option value="Dr. Lisa Brown (Pediatrician)">Dr. Lisa Brown - Pediatrician</option>
-              <option value="Dr. Adams White (Orthopedic)">Dr. Adams White - Orthopedic</option>
-            </select>
-          </div>
-          <br>
-          <br>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter your phone number" required />
+        </div>
 
-          <div class="form-group">
-            <label for="date">Preferred Date</label>
-            <input type="date" id="date" required>
-          </div>
-          <br>
-          <br>
+        <div class="form-group">
+          <label for="doctor">Select Doctor</label>
+          <select id="doctor" required>
+            <option value="">-- Choose Doctor --</option>
+            <option value="Dr. John Smith (Cardiologist)">Dr. John Smith - Cardiologist</option>
+            <option value="Dr. Lisa Brown (Pediatrician)">Dr. Lisa Brown - Pediatrician</option>
+            <option value="Dr. Adams White (Orthopedic)">Dr. Adams White - Orthopedic</option>
+          </select>
+        </div>
 
-          <div class="form-group">
-            <label for="time">Preferred Time</label>
-            <input type="time" id="time" required>
-          </div>
-          <br>
-          <br>
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" required />
+        </div>
 
-          <button type="submit" class="submit-btn">Book Appointment</button>
-        </form>
-      </div>
-      <br>
-      <br>
+        <div class="form-group">
+          <label for="time">Preferred Time</label>
+          <input type="time" id="time" required />
+        </div>
 
-      <!-- Confirmation Box -->
-      <div id="confirmation-box" class="hidden">
-        <h2>✅ Appointment Confirmed!</h2>
-        <p id="confirmation-message"></p>
-        <button onclick="window.location.reload()" class="submit-btn">Book Another</button>
-      </div>
+        <button type="submit" class="submit-btn">Book Appointment</button>
+      </form>
+    </div>
+
+    <div id="confirmation-box" class="hidden">
+      <h2>✅ Appointment Confirmed!</h2>
+      <p id="confirmation-message"></p>
+      <button onclick="window.location.reload()" class="submit-btn">Book Another</button>
     </div>
   </section>
 
   <script>
-    // Form handling
+    // Navbar toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Appointment confirmation
     const form = document.getElementById("appointment-form");
     const formBox = document.getElementById("form-box");
     const confirmationBox = document.getElementById("confirmation-box");
     const confirmationMsg = document.getElementById("confirmation-message");
 
     form.addEventListener("submit", function(e) {
-      e.preventDefault(); // stop page reload
-
-      // Collect user data
+      e.preventDefault();
       const name = document.getElementById("fullname").value;
       const doctor = document.getElementById("doctor").value;
       const date = document.getElementById("date").value;
       const time = document.getElementById("time").value;
 
-      // Build confirmation text
-      confirmationMsg.innerHTML = 
-        `Dear <strong>${name}</strong>, your appointment with <strong>${doctor}</strong> 
-        has been scheduled for <strong>${date}</strong> at <strong>${time}</strong>. 
-        Thank you for choosing Melanin Hospital.`;
+      confirmationMsg.innerHTML = `Dear <strong>${name}</strong>, your appointment with <strong>${doctor}</strong> has been scheduled for <strong>${date}</strong> at <strong>${time}</strong>. Thank you for choosing Melanin Hospital.`;
 
-      // Hide form, show confirmation
       formBox.style.display = "none";
       confirmationBox.style.display = "block";
     });
-  </script>  </section>
-  
-    
-  </form>
+  </script>
 </body>
 </html>
+
