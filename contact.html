@@ -1,122 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Melanin Hospital - Contact</title>
-  <style>/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+  <style>
+    /* === RESET === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #2c3e50;
-  padding: 15px 40px;
-}
+    body {
+      background: #f4f6f8;
+      color: #2c3e50;
+    }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-}
+    /* === NAVBAR === */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c3e50;
+      padding: 15px 40px;
+      flex-wrap: wrap;
+    }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-}
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
 
-.nav-links li {
-  margin-left: 25px;
-}
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  transition: color 0.3s;
-}
+    .nav-links li {
+      margin-left: 25px;
+    }
 
-.nav-links a:hover {
-  color: #f39c12;
-}
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
 
-/* Hero */
-.hero {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url(/imgs/family\ 2.jpg) center/cover no-repeat;
-  color: white;
-  text-align: center;
-}
+    .nav-links a:hover {
+      color: #f39c12;
+    }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
+    /* === HERO SECTION === */
+    .hero {
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('/imgs/family 2.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+    }
 
-.hero p {
-  font-size: 20px;
-}
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
 
-/* Flexbox Section */
-.flex-container {
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  margin: 50px;
-  flex-wrap: wrap;
-}
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+    }
 
-.flex-item {
-  background: white;
-  padding: 25px;
-  flex: 1;
-  min-width: 220px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-}
+    /* === CONTENT SECTION === */
+    .content {
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-.flex-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
+    .content h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+      font-size: 32px;
+    }
 
-.flex-item img {
-  width: 80px;
-  margin-bottom: 15px;
-}
+    .content p {
+      font-size: 18px;
+      margin: 10px 0;
+      background: white;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-.flex-item h2 {
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
+    /* === RESPONSIVENESS === */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+      .hero p {
+        font-size: 18px;
+      }
+    }
 
-/* Content Section */
-.content {
-  padding: 40px;
-  text-align: center;
-}
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 25px;
+      }
 
-.content h2 {
-  margin-bottom: 20px;
-  color: #2c3e50;
-}
-</style>
-  <link rel="stylesheet" href="style.css">
+      .nav-links {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+
+      .hero {
+        height: 50vh;
+        padding: 40px 10px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .content h2 {
+        font-size: 26px;
+      }
+
+      .content p {
+        font-size: 16px;
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 20px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .content h2 {
+        font-size: 22px;
+      }
+
+      .content p {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <nav class="navbar">
     <div class="logo">Melanin Hospital</div>
@@ -128,9 +187,14 @@
     </ul>
   </nav>
 
+  <section class="hero">
+    <h1>Contact Us</h1>
+    <p>We’re here to help you 24/7. Get in touch with our medical team anytime.</p>
+  </section>
+
   <section class="content">
-    <h2>Contact Us</h2>
-    <p>📍 KUMASI-GHANA</p>
+    <h2>Get In Touch</h2>
+    <p>📍 KUMASI - GHANA</p>
     <p>📞 +233 54 11 90 485</p>
     <p>✉️ solopappy76@gmail.com</p>
   </section>
