@@ -10,12 +10,13 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
       background-color: #f4f6f8;
       color: #2c3e50;
+      line-height: 1.6;
     }
 
     /* Navbar */
@@ -23,13 +24,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #2c3e50;
+      background: linear-gradient(90deg, #1e3a8a, #6d28d9);
       padding: 15px 30px;
       position: relative;
+      z-index: 1000;
     }
 
     .logo {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: bold;
       color: white;
     }
@@ -40,22 +42,18 @@
       gap: 25px;
     }
 
-    .nav-links li {
-      margin: 0;
-    }
-
-    .nav-links a {
+    .nav-links li a {
       text-decoration: none;
       color: white;
       font-size: 16px;
       transition: color 0.3s;
     }
 
-    .nav-links a:hover {
-      color: #f39c12;
+    .nav-links li a:hover {
+      color: #facc15;
     }
 
-    /* Hamburger Menu */
+    /* Hamburger */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -70,73 +68,78 @@
       border-radius: 2px;
     }
 
-    /* Content Section */
+    /* Hero / Content Section */
     .content {
       text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('/imgs/family.jpg') center/cover no-repeat;
-      color: #ecf0f1;
+      padding: 60px 20px;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1580281658629-17e4ec7b3f5f?auto=format&fit=crop&w=1600&q=80')
+        center/cover no-repeat;
+      color: white;
+      background-attachment: fixed;
     }
 
     .content h2 {
-      background: #2c3e50;
       display: inline-block;
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: 3px solid #f1c40f;
+      font-size: 2rem;
+      padding: 10px 25px;
+      border-radius: 10px;
+      border: 2px solid #facc15;
+      background: rgba(30, 58, 138, 0.8);
       margin-bottom: 20px;
     }
 
     .content p {
-      margin: 10px auto;
-      max-width: 600px;
-      background: #2c3e50;
-      padding: 10px;
+      margin: 15px auto;
+      max-width: 650px;
+      background: rgba(30, 58, 138, 0.75);
+      padding: 10px 20px;
       border-radius: 10px;
-      border: 2px solid #2ecc71;
+      border-left: 3px solid #22c55e;
     }
 
     .content ul {
       list-style: none;
       max-width: 400px;
-      margin: 20px auto;
-      background: #2c3e50;
-      border: 2px solid #3498db;
-      border-radius: 10px;
-      padding: 15px;
+      margin: 25px auto;
+      background: rgba(30, 58, 138, 0.8);
+      border: 2px solid #3b82f6;
+      border-radius: 12px;
+      padding: 20px;
       text-align: left;
     }
 
     .content ul li {
-      margin: 8px 0;
-      color: #ecf0f1;
+      margin: 10px 0;
+      color: #f8fafc;
+      font-size: 1rem;
     }
 
     /* Appointment Section */
     .appointment-section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
     }
 
     .form-container {
       background: white;
       max-width: 500px;
       margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      padding: 35px 30px;
     }
 
     .form-container h2 {
-      color: #2c3e50;
+      color: #1e3a8a;
       margin-bottom: 10px;
     }
 
     .form-container p {
       color: #555;
       font-size: 0.95rem;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .form-group {
@@ -146,9 +149,9 @@
 
     label {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       font-weight: bold;
-      color: #2c3e50;
+      color: #1e3a8a;
     }
 
     input,
@@ -163,21 +166,23 @@
 
     input:focus,
     select:focus {
-      border-color: #3498db;
+      border-color: #3b82f6;
+      box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
     }
 
     .submit-btn {
-      background: #2c3e50;
+      background: #1e3a8a;
       color: white;
       padding: 12px 25px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: 0.3s;
+      font-weight: 600;
     }
 
     .submit-btn:hover {
-      background: #1a242f;
+      background: #172554;
     }
 
     .hidden {
@@ -186,23 +191,27 @@
 
     /* Confirmation Box */
     #confirmation-box {
-      background: #ecf0f1;
-      border-radius: 10px;
+      background: white;
+      border-radius: 12px;
       padding: 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       color: #2c3e50;
+      max-width: 500px;
+      margin: 0 auto;
     }
 
-    /* Responsive Design */
+    /* Responsive */
     @media (max-width: 768px) {
       .nav-links {
         position: absolute;
-        top: 60px;
+        top: 65px;
         left: 0;
         width: 100%;
         flex-direction: column;
-        background: #2c3e50;
+        background: #1e3a8a;
         display: none;
+        text-align: center;
+        padding: 15px 0;
       }
 
       .nav-links.active {
@@ -213,13 +222,14 @@
         display: flex;
       }
 
-      .content h2 {
-        width: 80%;
-        font-size: 1.3rem;
+      .content {
+        background-attachment: scroll;
+        padding: 40px 15px;
       }
 
-      .content ul {
-        width: 80%;
+      .content h2 {
+        font-size: 1.6rem;
+        width: 90%;
       }
 
       .form-container {
@@ -232,22 +242,25 @@
         font-size: 18px;
       }
 
+      .nav-links li a {
+        font-size: 15px;
+      }
+
       .content h2 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+      }
+
+      .content p {
+        font-size: 0.9rem;
       }
 
       .form-container h2 {
         font-size: 1.2rem;
       }
 
-      input,
-      select {
-        font-size: 0.9rem;
-      }
-
       .submit-btn {
-        padding: 10px 18px;
         font-size: 0.9rem;
+        padding: 10px 20px;
       }
     }
   </style>
@@ -274,12 +287,12 @@
   <!-- Doctors Section -->
   <section class="content">
     <h2>Our Doctors</h2>
-    <p>Meet our team of dedicated healthcare professionals.</p>
+    <p>Meet our team of dedicated healthcare professionals who provide top-quality care with compassion and expertise.</p>
     <ul>
-      <li>Dr. John Doe - Cardiologist</li>
-      <li>Dr. Sarah Lee - Pediatrician</li>
-      <li>Dr. Ahmed Musa - Surgeon</li>
-      <li>Dr. Jane Smith - Dermatologist</li>
+      <li>👨‍⚕️ Dr. John Doe — Cardiologist</li>
+      <li>👩‍⚕️ Dr. Sarah Lee — Pediatrician</li>
+      <li>👨‍⚕️ Dr. Ahmed Musa — Surgeon</li>
+      <li>👩‍⚕️ Dr. Jane Smith — Dermatologist</li>
     </ul>
   </section>
 
@@ -287,7 +300,7 @@
   <section class="appointment-section">
     <div class="form-container" id="form-box">
       <h2>Book an Appointment</h2>
-      <p>Please fill out the form below to schedule your visit.</p>
+      <p>Fill in the form below to schedule your visit with one of our doctors.</p>
 
       <form id="appointment-form">
         <div class="form-group">
@@ -309,9 +322,10 @@
           <label for="doctor">Select Doctor</label>
           <select id="doctor" required>
             <option value="">-- Choose Doctor --</option>
-            <option value="Dr. John Smith (Cardiologist)">Dr. John Smith - Cardiologist</option>
-            <option value="Dr. Lisa Brown (Pediatrician)">Dr. Lisa Brown - Pediatrician</option>
-            <option value="Dr. Adams White (Orthopedic)">Dr. Adams White - Orthopedic</option>
+            <option value="Dr. John Doe (Cardiologist)">Dr. John Doe — Cardiologist</option>
+            <option value="Dr. Sarah Lee (Pediatrician)">Dr. Sarah Lee — Pediatrician</option>
+            <option value="Dr. Ahmed Musa (Surgeon)">Dr. Ahmed Musa — Surgeon</option>
+            <option value="Dr. Jane Smith (Dermatologist)">Dr. Jane Smith — Dermatologist</option>
           </select>
         </div>
 
