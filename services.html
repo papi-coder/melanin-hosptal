@@ -13,14 +13,25 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
+    body {
+      color: #2c3e50;
+      background: #f4f6f8;
+    }
+
     /* Navbar */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #2c3e50;
+      background: rgba(44, 62, 80, 0.95);
       padding: 15px 30px;
-      position: relative;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+     
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -65,27 +76,32 @@
       border-radius: 2px;
     }
 
-    /* Hero */
+    /* Hero Section */
     .hero {
-      height: 70vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url('/imgs/family.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1580281658627-43bbaedb4f3b?auto=format&fit=crop&w=1600&q=80')
+        center/cover no-repeat;
       color: white;
       text-align: center;
       padding: 20px;
+      margin-top: 70px;
     }
 
     .hero h1 {
       font-size: 2.8rem;
       margin-bottom: 15px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     }
 
     .hero p {
       font-size: 1.2rem;
+      max-width: 700px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
     }
 
     /* Flexbox Section */
@@ -105,14 +121,14 @@
       padding: 25px;
       flex: 1 1 260px;
       border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
       text-align: center;
     }
 
     .flex-item:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
     .flex-item img {
@@ -141,8 +157,9 @@
         left: 0;
         width: 100%;
         flex-direction: column;
-        background: #2c3e50;
+        background: rgba(44, 62, 80, 0.95);
         display: none;
+        padding: 15px 0;
       }
 
       .nav-links.active {
@@ -151,6 +168,11 @@
 
       .menu-toggle {
         display: flex;
+      }
+
+      .hero {
+        height: 80vh;
+        padding: 40px 10px;
       }
 
       .hero h1 {
@@ -173,8 +195,12 @@
     }
 
     @media (max-width: 480px) {
+      .logo {
+        font-size: 18px;
+      }
+
       .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .hero p {
@@ -213,7 +239,7 @@
   <!-- Hero -->
   <header class="hero">
     <h1>Our Healthcare Services</h1>
-    <p>Quality care for every patient, every time.</p>
+    <p>Quality care for every patient, every time — your health is our mission.</p>
   </header>
 
   <!-- Flexbox Services -->
